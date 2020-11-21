@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>房天下</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.4.2.min.css">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style type="text/css">
+        .xian{
+            display: none;
+        }
+        .hidden{
+            display: block;
+
+        }
+        .layer_biao_ceng{
+            position: fixed;
+            width:100%;
+            height:100%;
+            top:0;
+            left: 0;
+            z-index: 99;
+            display: none;
+            background:rgba(0,0,0,0.4);
+        }
+       #layer_biao{
+        width:100%;
+        height:246px;
+        overflow: scroll;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        
+        background-color: #fff;
+
+       }
+       #layer_biao ul li{
+        width:100%;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+       }
+       #layer_biao ul li a{
+        font-size: 15px;
+        color:#565c67;
+       }
+      /* .two{
+        width:100%;
+        height:360px;
+        
+       }*/
+       .s_two{
+        width:100%;
+        height:246px;
+        overflow-y: scroll;
+       }
+
+
+       /*.ad{
+        display: none;
+       }
+       header{
+        display: none;
+       }
+       content{
+        display: none;
+       }*/
+       #s_se{
+        display: none;
+       }
+
+       /*动画*/
+       .addw{
+
+            -webkit-transition: all 0s ease;
+       }
+       .add{
+            
+            -webkit-transform: rotate(180deg);
+       }
+
+       /*添加伪类*/
+       .s_two_b::before{
+            position: absolute;
+            left:0px;
+            top:13px;
+            content:"";
+            width:2px;
+            height:16px;
+            background-color: #ff6666;
+       }
+       .k_more_s{
+            border:1px solid #ff5350 !important;
+       }
+       .k_more_ss{
+            color:#ff5350 !important;
+       }
+    </style>
+</head>
+<body>
+    <!-- 广告位 -->
+    <div class="ad">
+        <a href="http://www.baidu.com"><div class="ad_main">
+            <ul>
+                <li><img src="./image/app_fang.png"></li>
+                <li><h3>下载房天下APP</h3><p>泉州高性价比二手房</p></li>
+                <li><span>立即下载</span></li>
+            </ul>
+        </div></a>
+    </div>
+    <!-- 头部 -->
+    <header>
+        <div class="left">
+            <a href=""></a>
+        </div>
+        <div class="center">
+            <a href="address.html">二手房泉州<i class="iconfontyyy">&#xe696;</i></a>
+        </div>
+        
+        <div class="right">
+            <a href="salehome.html"><i class="iconfontyyy">&#xe614;</i></a>
+            <i class="iconfontyyy show">&#xe682;</i>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $(".show").click(function(){
+                    $("#content").toggleClass("xian");
+                    // console.log(123);
+                    $(".fangtianxia").toggleClass("hidden");
+                })
+            })
+        </script>
+    </header>
+    <!-- 搜索模块 -->
+    <div id="s_se">
+        <div class="search_true">
+            <div class="search_true_head">
+                <div class="i"><i></i></div>
+               
+                <span>二手房搜索</span>
+            </div>
+            
+            <form action="1.php" method="get">
+                <div class="search_true_s">
+                    <div class="search_true_s_ipt">
+                        <input class="input" type="text" name="" placeholder="请输入小区名称、学校名称...">
+                        <span class="s_show" href="javascript:;"></span>
+                    </div>
+                    <a class="search_s" href=""><i></i></a>
+                </div>
+            </form>
+            <div class="s_re">
+                <h3>
+                    <span></span>最近热搜
+                </h3>
+                <div class="overf">
+                <div class="s_record">
+                    <a href="">
+                        <span>晋江世贸御龙湾</span>
+                    </a>
+                    <a href="">
+                        <span>百信御江帝景</span>
+                    </a>
+                    <a href="">
+                        <span>嘉琳广场</span>
+                    </a>
+                    <a href="">
+                        <span>晋江宝龙城市广场</span>
+                    </a>
+                    <a href="">
+                        <span>东海湾御花园</span>
+                    </a>
+                    <a href="">
+                        <span>万达华府</span>
+                    </a>
+                    <a href="">
+                        <span>泉州华大泰禾广场</span>
+                    </a>
+                    <a href="">
+                        <span>中骏蓝湾半岛</span>
+                    </a>
+                    <a href="">
+                        <span>格林春天</span>
+                    </a>
+                    <a href="">
+                        <span>三盛四季公园</span>
+                    </a>
+                    
+                </div>
+
+                </div>
+                <!-- 当点击清除之后要显示的效果 -->
+                <div class="c_show">
+                    <a href="">
+                        <span>晋江世贸御龙湾</span>
+                    </a>
+                    <a href="">
+                        <span>百信御江帝景</span>
+                    </a>
+                    <a href="">
+                        <span>嘉琳广场</span>
+                    </a>
+                    <a href="">
+                        <span>晋江宝龙城市广场</span>
+                    </a>
+                    <a href="">
+                        <span>东海湾御花园</span>
+                    </a>
+                    <a href="">
+                        <span>万达华府</span>
+                    </a>
+                    <a href="">
+                        <span>泉州华大泰禾广场</span>
+                    </a>
+                    <a href="">
+                        <span>中骏蓝湾半岛</span>
+                    </a>
+                    <a href="">
+                        <span>格林春天</span>
+                    </a>
+                    <a href="">
+                        <span>三盛四季公园</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="s_re1">
+                <h3>
+                    <span></span>搜索历史
+                </h3>
+                
+            </div>
+            <div class="s_his">
+                <a href=""><span>百信御江帝景</span></a>
+                 <a href=""><span>百信御江帝景</span></a>
+                  <a href=""><span>百信御江帝景</span></a>
+                   <a href=""><span>百信御江帝景</span></a>
+                <div class="s_foot">
+                    <a href="javascript:void(0)">清除历史记录</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+        <script type="text/javascript">
+            $(function(){
+                // 设置表单聚焦和失焦事件
+                $(".input").focus(function(){
+                    $(".s_show").show();
+                })
+                // 设置点击事件
+                $(".s_show").click(function(){
+                    $(".input").val("");
+                     $(".s_show").hide();
+                })
+                $(".s_foot>a").click(function(){
+                    $(".s_his").hide();
+                    $(".s_re1").hide();
+                    $(".overf").hide();
+                    $(".c_show").show();
+                })
+                $(".i").click(function(){
+                    $(".ad").show();
+                    $("header").show();
+                    $("content").show();
+                    $("#s_se").hide();
+                })
+                $(".s_left").click(function(){
+                    $("#s_se").show();
+                    $(".ad").hide();
+                    $("header").hide();
+                    $("content").hide();
+                })
+            })
+        </script>
+    <!-- 内容 -->
+    <div class="fangtianxia">
+        <div class="ftx_nav">
+            <h2>频道导航</h2>
+            <span>我的房天下<i></i></span>
+        </div>
+        <div class="icon">
+            <ul>
+                <li><a href="http://www.baidu.com">
+                    <i></i>
+                    <p>买新房</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>买二手房</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>找租房</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>装修</p>
+                </a></li>
+
+                <!-- 第二行 -->
+                <li><a href="">
+                    <i></i>
+                   
+                    <p>查房贷</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>我要卖房</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>我要出租</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>首页</p>
+                </a></li>
+                <!-- 第3行 -->
+                <li><a href="">
+                    <i></i>
+                   
+                    <p>资讯</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>看房团</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>房产问答</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>海外房产</p>
+                </a></li>
+                <!-- 第4行 -->
+                <li><a href="">
+                    <i></i>
+                   
+                    <p>写字楼</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>商铺</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>房贷计算器</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>业主论坛</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>房天下理财</p>
+                </a></li>
+                <!-- 第5行 -->
+                <li><a href="">
+                    <i></i>
+                   
+                    <p>我要贷款</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>房产知识</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>土地</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>别墅</p>
+                </a></li>
+                <!-- 第6行 -->
+                <li><a href="">
+                    <i></i>
+                   
+                    <p>短租</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>经纪人</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>产业</p>
+                </a></li>
+                
+            </ul>
+        </div>
+        <div class="ftx_nav" style="margin-top: 10px;">
+            <h2>APP应用</h2>
+            <span>全部应用<i></i></span>
+        </div>
+        <div class="icon2">
+            <ul>
+                <li><a href="">
+                    <i></i>
+
+                    <p>房天下</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>租房帮</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>房天下装修</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>房天下理财</p>
+                </a></li>
+
+                <!-- 第二行 -->
+                <li><a href="">
+                    <i></i>
+                   
+                    <p>搜房帮</p>
+                </a></li>
+                <li><a href="">
+                    <i></i>
+                    <p>游天下</p>
+                </a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <content id="content">
+            <div class="main">
+        <div class="search">
+            <div class="s_left"><a href="javascript:void(0)"><i class="iconfontyyy">&#xe63e;</i>请输入小区名称、学校名称...</a>
+            </div>
+            <div class="look">
+                <a href="">地图找房</a>
+            </div>
+        </div>
+        <div class="houseyuan">
+            <ul>
+                <li>全部房源</li>
+                <li>优选房源</li>
+            </ul>
+            <script type="text/javascript">
+                $(function(){
+                    // 默认情况下让第一个li的背景变色
+                    $(".houseyuan>ul>li:eq(0)").css({backgroundColor:"#83868F",color:"#fff"});
+                    // 设置点击事件
+                    $(".houseyuan>ul>li").click(function(){
+                        $(".houseyuan>ul>li").css({backgroundColor:"",color:"#666"});
+                        $(this).css({backgroundColor:"#83868F",color:"#fff"});
+                    })
+                })
+            </script>
+        </div>
+        <div class="choose">
+            <ul>
+                <li class="c_li"><a href="javascript:void(0);"><span>位置</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                <li class="c_li"><a href="javascript:void(0);"><span>总价</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                <li class="c_li"><a href="javascript:void(0);"><span>户型</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                <li class="c_li"><a href="javascript:void(0);"><span>更多</span><i class="iconfontyyy">&#xe611;</i></a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <ul class="c_ul">
+                <li>
+                    <a href="detail.html">
+                        <div class="img">
+                            <i class="iconfontyyy">&#xe60c;</i>
+                            <img src="./image/240x180c.jpg">
+                        </div>
+                        <div class="text">
+                            <h3>丰泽区 泉州华大泰禾广场 2室2厅</h3>
+                            <p><span>89m² </span><span>2室2厅 </span><span>南北 </span><span class="money">125万</span></p>
+                            <p><span>丰泽区-城东</span></p>
+                            <div class="owner">
+                                <span class="o_one">业主委托</span><span class="o_two">共6541条房源</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- 第二个 -->
+                <li>
+                    <a href="detail.html">
+                        <div class="img">
+                             <i class="iconfontyyy">&#xe60c;</i>
+                            <img src="./image/240x180c.jpg">
+                        </div>
+                        <div class="text">
+                            <h3>泉秀路 02年小区 力达苑 精品复式四房 156万</h3>
+                            <p><span>172m² </span><span>4室2厅 </span><span> </span><span class="money">156万</span></p>
+                            <p>力达苑<span class="fr">9070元/m²</span></p>
+                            <!-- 这是一整块 -->
+                            <div class="man">
+                                <span class="m_one">满五唯一</span><span class="m_two">满二</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!-- 第三个 -->
+               <li>
+                    <a href="detail.html">
+                        <div class="img">
+                             <i class="iconfontyyy">&#xe60c;</i>
+                            <img src="./image/240x180c.jpg">
+                        </div>
+                        <div class="text">
+                            <h3>泉秀路 02年小区 力达苑 精品复式四房 156万</h3>
+                            <p><span>172m² </span><span>4室2厅 </span><span> </span><span class="money">156万</span></p>
+                            <p>力达苑<span class="fr">9070元/m²</span></p>
+                           
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="detail.html">
+                        <div class="img">
+                             <i class="iconfontyyy">&#xe60c;</i>
+                            <img src="./image/240x180c.jpg">
+                        </div>
+                        <div class="text">
+                            <h3>泉秀路 02年小区 力达苑 精品复式四房 156万</h3>
+                            <p><span>172m² </span><span>4室2厅 </span><span> </span><span class="money">156万</span></p>
+                            <p>力达苑<span class="fr">9070元/m²</span></p>
+                           
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="detail.html">
+                        <div class="img">
+                             <i class="iconfontyyy">&#xe60c;</i>
+                            <img src="./image/240x180c.jpg">
+                        </div>
+                        <div class="text">
+                            <h3>泉秀路 02年小区 力达苑 精品复式四房 156万</h3>
+                            <p><span>172m² </span><span>4室2厅 </span><span> </span><span class="money">156万</span></p>
+                            <p>力达苑<span class="fr">9070元/m²</span></p>
+                           
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="detail.html">
+                        <div class="img">
+                             <i class="iconfontyyy">&#xe60c;</i>
+                            <img src="./image/240x180c.jpg">
+                        </div>
+                        <div class="text">
+                            <h3>泉秀路 02年小区 力达苑 精品复式四房 156万</h3>
+                            <p><span>172m² </span><span>4室2厅 </span><span> </span><span class="money">156万</span></p>
+                            <p>力达苑<span class="fr">9070元/m²</span></p>
+                           
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="detail.html">
+                        <div class="img">
+                             <i class="iconfontyyy">&#xe60c;</i>
+                            <img src="./image/240x180c.jpg">
+                        </div>
+                        <div class="text">
+                            <h3>泉秀路 02年小区 力达苑 精品复式四房 156万</h3>
+                            <p><span>172m² </span><span>4室2厅 </span><span> </span><span class="money">156万</span></p>
+                            <p>力达苑<span class="fr">9070元/m²</span></p>
+                           
+                        </div>
+                    </a>
+                </li>
+                <!-- 滚动条监听事件  加上瀑布流事件 -->
+                <script type="text/javascript">
+                    function insertcode() {  
+                    var content = $(".c_ul");  
+                   
+                    var data=
+                    content.append('<li><a href=\"\"><div class=\"img\"><i class=\"iconfontyyy\">&#xe60c;</i><img src=\"./image/240x180c.jpg\"></div><div class=\"text\"><h3>泉秀路 02年小区 力达苑 精品复式四房 156万</h3><p><span>172m² </span><span>4室2厅 </span><span> </span><span class=\"money\">156万</span></p><p>力达苑<span class=\"fr\">9070元/m²</span></p></div></li>');
+                     }  
+                 // $(function(){
+                 //    $(window).scroll(function () {  
+                 //        // console.log($(window).scrollTop())
+                 //        // console.log($(window).height())
+                 //        // console.log($(document).height())
+                 //        if ($(document).height()-$(window).height()-$(window).scrollTop()<=120) {  
+                            
+                 //            insertcode();  
+                 //        }  
+                        
+                 //    }); 
+
+                 // })
+                        
+                    
+                    
+               
+                </script>
+            </ul>
+
+        </div>
+        <div class="more">
+            <span class="fang"></span><i></i>
+            <span class="m_fang">查看更多房源</span>
+        </div>
+<!-- 返回顶部按钮 -->
+     <div class="top">
+                  
+                   
+                    <div class="crcleone"><i class="iconfontyyy i_two">&#xe60d;</i></div>
+                     <div class="crcletwo"><i class="iconfontyyy i_one">&#xe648;</i></div>
+                </div>
+
+        </div>
+        <!-- 遮罩层 -->
+        <div class="layer_biao_ceng">
+        <div id="layer_biao">
+            
+            <div class="swiper-container two">
+                <div class="swiper-wrapper">
+                    <ul class="swiper-slide s_two">
+                        <li>
+                            <a href="">默认排序</a>
+                        </li>
+                         <li>
+                            <a href="">发布时间</a>
+                        </li>
+                        <li>
+                            <a href="">单价由低到高</a>
+                        </li>
+                        <li>
+                            <a href="">单价由高到低</a>
+                        </li>
+                        <li>
+                            <a href="">总价由高到低</a>
+                        </li>
+                        <li>
+                            <a href="">总价由低到高</a>
+                        </li>
+                       
+                        <li>
+                            <a href="">面积由小到大</a>
+                        </li>
+                        <li>
+                            <a href="">面积由大到小</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <!-- 滚动条向下时不显示，滚动条向上时显示 -->
+        <div class="choose1">
+            <ul>
+                <li><a href="javascript:void(0);"><span>位置</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                <li><a href="javascript:void(0);"><span>总价</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                <li><a href="javascript:void(0);"><span>户型</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                <li><a href="javascript:void(0);"><span>更多</span><i class="iconfontyyy">&#xe611;</i></a></li>
+            </ul>
+        </div>
+        <!-- 选项卡遮罩层 -->
+        <div class="ka">
+            <div class="ka_f">
+                <div class="choose2">
+                    <ul>
+                        <li class="k_li"><a href="javascript:void(0);"><span>位置</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                        <li class="k_li"><a href="javascript:void(0);"><span>总价</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                        <li class="k_li"><a href="javascript:void(0);"><span>户型</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                        <li class="k_li"><a href="javascript:void(0);"><span>更多</span><i class="iconfontyyy">&#xe611;</i></a></li>
+                    </ul>
+                </div>
+                <!-- 选项卡 -->
+                <div class="ka_p">
+                    <div class="ka_p_one">
+                        <section class="s_one">
+                            <dl>
+                                <dd><a href="javascript:void(0)">区域</a></dd>
+                                <dd><a href="">学校</a></dd>
+                            </dl>
+                        </section>
+                        <section class="s_two">
+                            <dl>
+                                <dd><a href="">不限</a></dd>
+                                <dd><a href="javascript:void(0)">丰泽区</a></dd>
+                                <dd><a href="javascript:void(0)">鲤城区</a></dd>
+                                <dd><a href="javascript:void(0)">晋江市</a></dd>
+                                <dd><a href="javascript:void(0)">洛江区</a></dd>
+                                <dd><a href="javascript:void(0)">泉港区</a></dd>
+                                <dd><a href="javascript:void(0)">清濛开发区</a></dd>
+                                <dd><a href="javascript:void(0)">南安市</a></dd>
+                                <dd><a href="javascript:void(0)">石狮市</a></dd>
+                                <dd><a href="javascript:void(0)">惠安县</a></dd>
+                                <dd><a href="javascript:void(0)">安溪县</a></dd>
+                                <dd><a href="javascript:void(0)">德化县</a></dd>
+                                <dd><a href="javascript:void(0)">永春县</a></dd>
+                            </dl>
+                        </section>
+                        <section class="s_san">
+                            <dl>
+                                <dd><a href="">丰泽区全部</a></dd>
+                                <dd><a href="">城东</a></dd>
+                                <dd><a href="">东海</a></dd>
+                                <dd><a href="">东湖</a></dd>
+                                <dd><a href="">丰泽街道</a></dd>
+                                <dd><a href="">丰泽商城</a></dd>
+                                <dd><a href="">鲤中工业区</a></dd>
+                                <dd><a href="">泉秀</a></dd>
+                                <dd><a href="">云谷工业区</a></dd>
+                                <dd><a href="">政府广场</a></dd>
+                                <dd><a href="">浦西万达</a></dd>
+                                <dd><a href="">国贸商城</a></dd>
+                                <dd><a href="">津淮街</a></dd>
+                                <dd><a href="">湖心街</a></dd>
+                                <dd><a href="">宝洲路</a></dd>
+                                <dd><a href="">田安路</a></dd>
+                            </dl>
+                            <dl>
+                                <dd><a href="">鲤城区全部</a></dd>
+                                <dd><a href="">百汇购物街中心</a></dd>
+                                <dd><a href="">开元</a></dd>
+                                <dd><a href="">桥南片区</a></dd>
+                                <dd><a href="">西湖</a></dd>
+                                <dd><a href="">浮桥</a></dd>
+                                <dd><a href="">九一街</a></dd>
+                                <dd><a href="">新门街</a></dd>
+                                <dd><a href="">少林路</a></dd>
+                                <dd><a href="">中山路</a></dd>
+                                
+                            </dl>
+                            <dl>
+                                <dd><a href="">晋江市全部</a></dd>
+                                <dd><a href="">晋江</a></dd>
+                            </dl>
+                            <dl>
+                                <dd><a href="">洛江区全部</a></dd>
+                                <dd><a href="">洛江</a></dd>
+                            </dl>
+                            <dl>
+                                <dd><a href="">泉港县全部</a></dd>
+                                <dd><a href="">泉港</a></dd>
+                            </dl>
+                             <dl>
+                                <dd><a href="">清濛开发区全部</a></dd>
+                                <dd><a href="">清濛开发区</a></dd>
+                            </dl>
+                            <dl>
+                                <dd><a href="">南安市全部</a></dd>
+                                <dd><a href="">南安</a></dd>
+                            </dl>
+                            <dl>
+                                <dd><a href="">石狮市全部</a></dd>
+                                <dd><a href="">石狮</a></dd>
+                            </dl>
+                            <dl>
+                                <dd><a href="">惠安县全部</a></dd>
+                                <dd><a href="">惠安</a></dd>
+                            </dl>
+                            <dl>
+                                <dd><a href="">安溪县全部</a></dd>
+                                <dd><a href="">安溪</a></dd>
+                            </dl>
+                            <dl>
+                                <dd><a href="">德化县全部</a></dd>
+                                <dd><a href="">德化</a></dd>
+                            </dl>
+                            <dl>
+                                <dd><a href="">永春县全部</a></dd>
+                                <dd><a href="">永春</a></dd>
+                            </dl>
+                        </section>
+                    </div>
+                    <div class="ka_p_one">
+                        <section class="s_si">
+                            <dl>
+                                <dd><a href="">不限</a></dd>
+                                <dd><a href="">20万以下</a></dd>
+                                <dd><a href="">20-30万</a></dd>
+                                <dd><a href="">30-40万</a></dd>
+                                <dd><a href="">40-50万</a></dd>
+                                <dd><a href="">50-80万</a></dd>
+                                <dd><a href="">80-110万</a></dd>
+                                <dd><a href="">110-150万</a></dd>
+                                <dd><a href="">150万以上</a></dd>
+                            </dl>
+                            <div class="qujian">
+                                <div class="qu_box">
+                                    <div class="qu_left">
+                                        <span>不限</span>
+                                    </div>
+                                    <div class="qu_right">
+                                        <span>不限</span>
+                                    </div>
+                                    <div class="qu_xian"></div>
+                                </div>
+
+                                
+                            </div>
+                            <div class="sure">
+                                    <a href="">确定</a>
+                                </div>
+                        </section>
+                    </div>
+                    <div class="ka_p_one">
+                        <section>
+                            <dl>
+                                <dd><a href="">不限</a></dd>
+                                <dd><a href="">一居</a></dd>
+                                <dd><a href="">二居</a></dd>
+                                <dd><a href="">三居</a></dd>
+                                <dd><a href="">四居</a></dd>
+                                <dd><a href="">五居</a></dd>
+                                <dd><a href="">五居以上</a></dd>
+                            </dl>
+                        </section>
+                    </div>
+                    <div class="ka_p_one">
+                        <section>
+                            <div class="k_more">
+                                <div class="k_more_h">特色</div>
+                                <div class="k_more_c">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">满五唯一</a></li>
+                                        <li><a href="javascript:void(0)">满二</a></li>
+                                        <li><a href="javascript:void(0)">不看商住小区</a></li>
+                                    </ul>
+                                    <ul>
+                                        
+                                        <li><a href="javascript:void(0)">视频看房</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="k_more">
+                                <div class="k_more_h">朝向</div>
+                                <div class="k_more_c">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">南北通透</a></li>
+                                        <li><a href="javascript:void(0)">东西向</a></li>
+                                        <li><a href="javascript:void(0)">朝南</a></li>
+                                        
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">朝北</a></li>
+                                        <li><a href="javascript:void(0)">朝东</a></li>
+                                        <li><a href="javascript:void(0)">朝西</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="k_more">
+                                <div class="k_more_h">面积</div>
+                                <div class="k_more_c">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">50m²以下</a></li>
+                                        <li><a href="javascript:void(0)">50-70m²</a></li>
+                                        <li><a href="javascript:void(0)">70-90m²</a></li>
+                                        
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">90-110m²</a></li>
+                                        <li><a href="javascript:void(0)">110-130m²</a></li>
+                                        <li><a href="javascript:void(0)">130-150m²</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">150-200m²</a></li>
+                                        <li><a href="javascript:void(0)">200-300m²</a></li>
+                                        <li><a href="javascript:void(0)">300m²以上</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                             <div style="clear: both"></div>
+                            <div class="k_more">
+                                <div class="k_more_h">楼龄</div>
+                                <div class="k_more_c">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">5年以内</a></li>
+                                        <li><a href="javascript:void(0)">5-10年</a></li>
+                                        <li><a href="javascript:void(0)">10-20年</a></li>
+                                        
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">20年以上</a></li>
+                                       
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="k_more">
+                                <div class="k_more_h">楼层</div>
+                                <div class="k_more_c">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">低(1-6楼)</a></li>
+                                        <li><a href="javascript:void(0)">中(7到12楼)</a></li>
+                                        <li><a href="javascript:void(0)">高(12楼以上)</a></li>
+                                        
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="k_more">
+                                <div class="k_more_h">装修</div>
+                                <div class="k_more_c">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">精装修</a></li>
+                                        <li><a href="javascript:void(0)">简装修</a></li>
+                                        <li><a href="javascript:void(0)">毛坯</a></li>
+                                        
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="k_more">
+                                <div class="k_more_h">类型</div>
+                                <div class="k_more_c">
+                                    <ul style="padding-bottom: 53px">
+                                        <li><a href="javascript:void(0)">住宅</a></li>
+                                        
+                                        <li><a href="javascript:void(0)">别墅</a></li>
+                                        
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="k_more_btn">
+                                <a href="javascript:void(0)">清空条件</a>
+                                <a href="javascript:void(0)">确认</a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 遮罩层的js -->
+        <script type="text/javascript">
+        // 排序遮罩层
+            $(".crcleone").click(function(){
+                $(".layer_biao_ceng").css("height",$(document).height());     
+                $(".layer_biao_ceng").css("width",$(document).width());     
+                $(".layer_biao_ceng").show(); 
+            }) 
+            $(".layer_biao_ceng").click(function(){
+                $(".layer_biao_ceng").hide();
+                
+                })
+            $("#layer_biao").click(function(e){
+               $(".layer_biao_ceng").show();
+                e.stopPropagation();
+                }) 
+
+            // 选项卡遮罩层
+           
+            
+            $(".c_li").click(function(){
+                var n=$(this).index();
+                console.log(n)
+                $(".ka").css("height",$(document).height());
+                $(".ka").css("width",$(document).width());
+                $(".ka").show();
+                $(".k_li").eq(n).children("a").children("span").css({color:"#ff6666"});
+                $(".k_li").eq(n).siblings().children("a").children("span").css({color:""});
+                 $(".k_li").eq(n).children("a").children("i").css({color:"#ff6666"});
+                  $(".k_li").eq(n).siblings().children("a").children("i").css({color:""});
+                 $(".ka_p_one").eq(n).show().siblings().hide();
+            })
+           
+
+
+            $(".ka").click(function(e){
+                $(".ka").hide();
+                e.stopPropagation();
+            })
+
+
+            $(".ka_f").click(function(e){
+                $(".ka").show();
+                e.stopPropagation();
+            })
+
+
+            
+            // 为导航条设置点击事件
+            $(".k_li").click(function(){
+                console.log($(this).index())
+                var num=$(this).index();
+                $(this).children("a").children("span").css({color:"#ff6666"});
+                $(this).siblings().children("a").children("span").css({color:""});
+                $(this).children("a").children("i").addClass("addw").addClass("add").css({color:"#ff6666"});
+                $(this).siblings().children("a").children("i").removeClass("addw").removeClass("add").css({color:""});
+                $(".ka_p_one").eq(num).show().siblings().hide();
+            })
+            // 为dd设置点击事件
+            $(".s_san>dl").hide();
+            $(".s_two>dl>dd").eq(0).addClass("s_two_b");
+            $(".s_two>dl>dd").click(function(){
+                var num1=$(this).index();
+                console.log(num1)
+                $(this).css({backgroundColor:"#f2f5f8"}).siblings().css({backgroundColor:""});
+                // 给当前点击的那个dd添加伪类属性
+                $(this).addClass("s_two_b").siblings().removeClass("s_two_b");
+                $(".s_two>dl>dd").eq(0).css({backgroundColor:"#fff"});
+                $(".s_one").css({width:"25%"});
+                $(".s_two").css({width:"35%"});
+                $(".s_san").css({width:"40%"});
+                $(".s_san").show();
+                $(".s_san>dl").eq(num1-1).show().siblings().hide();
+            })
+            
+
+            // 点击li让边框变色
+            $(".k_more_c>ul>li").click(function(){
+                $(this).toggleClass("k_more_s");
+                $(this).children("a").toggleClass("k_more_ss");
+            })
+            
+        </script>
+        <!-- 监听滚动条事件，如果向下滚动，则隐藏div，向上滚动则显示div -->
+        <script type="text/javascript">
+            $(function(){
+                $(".crcletwo").click(function(){
+                    $('body,html').animate({scrollTop:0},500);
+                    
+                });
+
+                $(window).scroll(function(){
+                    if($(window).scrollTop()>=232){
+                        $(".crcletwo").show();
+                    }else {
+                        $(".crcletwo").hide();
+                        
+                    }
+                    // 第一次的滚动条的位置
+                    var before=$(window).scrollTop();
+                    // 嵌套一个滚动条监听事件
+                    $(window).scroll(function(){
+                        // 第二次滚动条的位置
+                        var after=$(window).scrollTop();
+                        // 如果第一次的位置大于第二次的位置，则上滑
+                        if(before>after){
+                            // console.log("上");
+                            $(".choose1").show();
+                            // 在上滑的过程中判断，如果第二次的滚动条小与280则隐藏div
+                            if(after<=280){
+                                $(".choose1").hide();
+                                before=after;
+                            }
+                            
+                        };
+                        // 如果第二次的位置大于第一次，就隐藏div
+                        if(before<after){
+                            // console.log("下");
+                            before=after;
+                            $(".choose1").hide();
+                        }
+                    })
+
+                })
+            })
+        </script>
+        <!-- 尾部 -->
+    <footer>
+        <div class="footer_head">
+            <ul>
+                <li>热门小区</li>
+                <li>城市二手房</li>
+                <li>区县二手房</li>
+                <li>小区二手房</li>
+                <li>综合推荐</li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $(".footer_head>ul>li").click(function(){
+                    $(".footer_head>ul>li").css({borderBottom:"1px solid #fff",fontSize:"13px",color:"#83868f"});
+                    
+                    $(this).css({borderBottom:"1px solid red",fontSize:"14px",color:"#000"});
+                    
+                    var index=$(this).index();
+                    $(".demo").eq(index).show().siblings().hide(); 
+                })
+            })
+        </script>
+       <div class="footer_swiper">
+            <div class="swiper-container demo">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">三盛四季公园</a></li>
+                            <li><a href="">中骏柏景湾</a></li>
+                            <li><a href="">南益鲤景湾</a></li>
+                            <li><a href="">百捷中央华府</a></li>
+                            <li><a href="">海丝景城</a></li>
+                            <li><a href="">中骏蓝湾半岛</a></li>
+                            <li><a href="">福新花园城</a></li>
+                            <li><a href="">富临嘉园</a></li>
+                            <li><a href="">辉映江山</a></li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">卓辉金色外滩</a></li>
+                            <li><a href="">东海湾御花园</a></li>
+                            <li><a href="">南益汇景豪</a></li>
+                            <li><a href="">百捷中央墅府</a></li>
+                            <li><a href="">尊邸大厦</a></li>
+                            <li><a href="">凯旋国际</a></li>
+                            <li><a href="">香缤国际</a></li>
+                            <li><a href="">泉州浦西万达广场</a></li>
+                            <li><a href="">锦洲瑞菀</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 圆点 -->
+                    <div class="swiper-pagination swiper-pagination-bullets">
+                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                        <span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+                    </div>
+                </div>
+                <div class="swiper-container demo">
+                    <div class="swiper-wrapper">
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">福州二手房</a></li>
+                            <li><a href="">厦门二手房</a></li>
+                            <li><a href="">漳州二手房</a></li>
+                            <li><a href="">莆田二手房</a></li>
+                            <li><a href="">三明二手房</a></li>
+                            <li><a href="">南平二手房</a></li>
+                            <li><a href="">龙岩二手房</a></li>
+                            <li><a href="">宁德二手房</a></li>
+                            <li><a href="">潮州二手房</a></li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">平潭二手房</a></li>
+                            <li><a href="">南安二手房</a></li>
+                            <li><a href="">龙海二手房</a></li>
+                            <li><a href="">惠安二手房</a></li>
+                            <li><a href="">长乐二手房</a></li>
+                            <li><a href="">石狮二手房</a></li>
+                            <li><a href="">安溪二手房</a></li>
+                            <li><a href="">连江二手房</a></li>
+                            <li><a href="">永春二手房</a></li>
+                        </ul>
+                    </div>
+                   </div>
+                   <!-- 圆点 -->
+                    <div class="swiper-pagination swiper-pagination-bullets">
+                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                        <span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+                    </div>
+                   </div>
+                <div class="swiper-container demo">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">丰泽区二手房</a></li>
+                            <li><a href="">鲤城区二手房</a></li>
+                            <li><a href="">晋江市二手房</a></li>
+                            <li><a href="">洛江区二手房</a></li>
+                            <li><a href="">泉港区二手房</a></li>
+                            <li><a href="">清濛开发区二手房</a></li>
+                            <li><a href="">南安市二手房</a></li>
+                            <li><a href="">石狮市二手房</a></li>
+                            <li><a href="">惠安县二手房</a></li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">安溪县二手房</a></li>
+                            <li><a href="">德化县二手房</a></li>
+                            <li><a href="">永春县二手房</a></li>
+                            
+                        </ul>
+                    </div>
+                    </div>
+                    <!-- 圆点 -->
+                    <div class="swiper-pagination swiper-pagination-bullets">
+                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                        <span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+                    </div>
+                    </div>
+            <div class="swiper-container demo">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">刺桐明珠二手房</a></li>
+                            <li><a href="">百捷中央领地二手房</a></li>
+                            <li><a href="">摩卡小镇二手房</a></li>
+                            <li><a href="">百宏华尔街二手房</a></li>
+                            <li><a href="">凯旋国际二手房</a></li>
+                            <li><a href="">永隆国际社区二手房</a></li>
+                            <li><a href="">锦绣江南二手房</a></li>
+                            <li><a href="">东美小区二手房</a></li>
+                            <li><a href="">嘉龙现代城二手房</a></li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">溜霞花园二手房</a></li>
+                            <li><a href="">泉州万科城二手房</a></li>
+                            <li><a href="">华景仁居二手房</a></li>
+                            <li><a href="">东街8号区二手房</a></li>
+                            <li><a href="">百捷中央学府二手房</a></li>
+                            <li><a href="">金色华园二手房</a></li>
+                            <li><a href="">美尔奇花苑二手房</a></li>
+                            <li><a href="">见龙亭小区二手房</a></li>
+                            <li><a href="">水木春天二手房</a></li>
+                        </ul>
+                    </div>
+
+                    </div>
+                    <!-- 圆点 -->
+                    <div class="swiper-pagination swiper-pagination-bullets">
+                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                        <span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+                    </div>
+                    </div>
+            <div class="swiper-container demo">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">泉州二手房</a></li>
+                            <li><a href="">泉州新房</a></li>
+                            <li><a href="">泉州小区</a></li>
+                            <li><a href="">泉州租房</a></li>
+                            <li><a href="">泉州短租房</a></li>
+                            <li><a href="">泉州装修</a></li>
+                            <li><a href="">泉州装修公司</a></li>
+                            <li><a href="">泉州房价</a></li>
+                            <li><a href="">泉州写字楼</a></li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">泉州商铺</a></li>
+                            <li><a href="">泉州看房团</a></li>
+                            <li><a href="">泉州业主论坛</a></li>
+                            <li><a href="">泉州房产资讯</a></li>
+                            <li><a href="">产业网</a></li>
+                            <li><a href="">海外房产</a></li>
+                            <li><a href="">房贷计算器</a></li>
+                            <li><a href="">房产知识</a></li>
+                            <li><a href="">房产问答</a></li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide one">
+                        <ul>
+                            <li><a href="">泉州找学校</a></li>
+                            <li><a href="">泉州找别墅</a></li>
+                            <li><a href="">泉州小区汇总</a></li>
+                            <li><a href="">泉州二手房汇总</a></li>
+                            <li><a href="">区域导航</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <!-- 圆点 -->
+                    <div class="swiper-pagination swiper-pagination-bullets">
+                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                        <span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+                    </div>
+                </div>
+                </div>
+                
+               
+            
+            
+            
+       </div>
+
+
+        <div class="dibu">
+            <div class="dibu_tiao">
+                <ul>
+                    <li><a href="">登陆</a></li>
+                    <li><a href="">电脑版</a></li>
+                    <li><a href="">APP下载</a></li>
+                    <li><a href="">反馈</a></li>
+                </ul>
+            </div>
+            <div class="dibu_p">
+                <p>©m.fang.com</p>
+            </div>
+        </div>
+    </footer>
+    </content>
+    
+</body>
+
+<script type="text/javascript" src="./js/swiper-3.4.2.min.js"></script>
+<script type="text/javascript">
+    var mySwiper = new Swiper('.demo',{
+     pagination : '.swiper-pagination',
+     // paginationElement : 'span',
+     observer:true,//修改swiper自己或子元素时，自动初始化swiper
+     observeParents:true,//修改swiper的父元素时，自动初始化swiper
+    })
+    var mySwiper = new Swiper('.two',{
+    direction : 'vertical',
+    freeMode : true,
+     observer:true,//修改swiper自己或子元素时，自动初始化swiper
+     observeParents:true,//修改swiper的父元素时，自动初始化swiper
+     autoHeight:true
+    })
+    
+</script>
+</html>
